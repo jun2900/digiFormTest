@@ -63,10 +63,6 @@ func insertAirwayBill(c *fiber.Ctx, service string, kodeposTujuan string, t time
 
 func AirwayBill(c *fiber.Ctx) error {
 	db := database.DBConn
-	//db.Exec("TRUNCATE `digiformTest`.`lokasi`")
-	//db.Exec("TRUNCATE `digiformTest`.`airway_bill`")
-	db.Exec("TRUNCATE lokasi restart identity")
-	db.Exec("TRUNCATE airway_bill restart identity")
 
 	file, err := c.FormFile("document")
 	if err != nil {
