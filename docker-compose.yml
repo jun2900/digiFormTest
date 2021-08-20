@@ -1,0 +1,16 @@
+version: '3.7'
+services:
+  fullstack-postgres:
+    image: postgres:latest
+    container_name: db_postgres
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_HOST=${DB_HOST}
+    volumes:
+      - database_postgres:/var/lib/postgres
+    network_mode: host
+
+volumes:
+  database_postgres:
